@@ -34,9 +34,11 @@ jxRequirements:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: gaocheng001
+    repository: dda
   - key: staging
   ingress:
-    domain: change.me
+    domain: 192.168.31.89.nip.io
     ignoreLoadBalancer: true
     kind: ingress
     namespaceSubDomain: .tekton-pipelines.
@@ -44,9 +46,12 @@ jxRequirements:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: gaocheng001
   repository: bucketrepo
   secretStorage: vault
-  vault: {}
+  vault:
+    url: http://192.168.31.89:8200
   webhook: lighthouse
 jxRequirementsIngressExternalDNS:
   enabled: false
